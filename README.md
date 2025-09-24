@@ -1,0 +1,2 @@
+# kalkulatorsecant
+metode secant
