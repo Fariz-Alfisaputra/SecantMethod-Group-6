@@ -28,3 +28,9 @@ def secant_method(function_str, x0, x1, epsilon=0.001, max_iter=100):
             'f(x_{n+1})': next_f,
             'e': error
         })
+        if error < epsilon or abs(next_f) < epsilon:
+            return pd.DataFrame(results), next_x
+        prev_x, curr_x = curr_x, next_x
+        prev_f, curr_f = curr_f, next_f
+        iteration += 1
+    return pd.DataFrame(results), next_x
