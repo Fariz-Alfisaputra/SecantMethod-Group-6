@@ -1,47 +1,116 @@
-body { 
-    background-color: #f8f9fa; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Import Google Font untuk tampilan yang modern dan bersih */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    
+    background: linear-gradient(135deg, #FFF7E8 0%, #FDF5E6 100%);
+    color: #5D4037; 
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #6F4E37; 
+    font-weight: 600;
+}
+
+.lead {
+    color: #7E6A54; 
+    font-size: 1.1rem;
+}
+
+.card {
+    background: #FFFCF5;
+    border: 1px solid #EAE0C8;
+    box-shadow: 0 6px 20px rgba(111, 78, 55, 0.08);
+    border-radius: 0.75rem;
 }
 
 .card-header {
-    background-color: #e9ecef;
-    border-bottom: 1px solid #dee2e6;
+    background: #F8F0DE;
+    border-bottom: 1px solid #EAE0C8;
+    color: #6F4E37;
+    font-weight: 500;
 }
 
-.card { 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    border: 1px solid #dee2e6;
+.form-control, .form-select {
+    background-color: #ffffff;
+    color: #5D4037;
+    border: 1px solid #DCD0B4;
 }
+
+.form-control::placeholder {
+    color: #BCAAA4;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #C68E42; 
+    box-shadow: 0 0 0 0.25rem rgba(198, 142, 66, 0.25); 
+}
+
 .btn-primary {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+    background-color: #C68E42;
+    border-color: #C68E42;
+    color: #ffffff;
+    font-weight: 500;
     padding: 10px;
     font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #B57F3A; 
+    border-color: #B57F3A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(198, 142, 66, 0.3);
+}
+
+.info-box {
+    background-color: transparent;
+    border-top: 1px solid #EAE0C8;
+    font-size: 0.9em;
+    padding: 1rem;
+    color: #7E6A54;
 }
 
 .result-highlight {
     font-weight: bold;
-    color: #198754;
+    color: #8B4513;
     font-size: 1.1em;
 }
 
-.info-box { 
-    background-color: transparent;
-    border-top: 1px solid #dee2e6;
-    font-size: 0.9em; 
-    padding: 1rem;
-}
-
-.info-box ul {
-    padding-left: 1.2rem;
-    margin-bottom: 0;
+.alert {
+    border-radius: 0.5rem;
 }
 
 .table-container {
-    max-height: 60vh; 
-    overflow-y: auto; 
-    overflow-x: auto; 
-    border-radius: 0 0 .375rem .375rem; 
+    max-height: 60vh;
+    overflow-y: auto;
+    border-radius: 0 0 .75rem .75rem;
+}
+
+.table {
+    color: #5D4037;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    background-color: #F8F0DE;
+    color: #5D4037;
+}
+
+.table-hover>tbody>tr:hover>* {
+    background-color: #EAE0C8;
+    color: #5D4037;
+}
+
+.table-bordered {
+    border-color: #EAE0C8;
+}
+
+.table .table-dark {
+    --bs-table-bg: #6F4E37;
+    color: #ffffff;
+    border-color: #86654F;
 }
 
 .table thead th {
