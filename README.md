@@ -4,3 +4,4 @@ Beranggota:
 - Roseline Balqist (2408107010079)
 - Ahmad Zikri Pasya (2408107010103)
 - T. Farid Haqi (2408107010091)
+- M. Athallah Assyarif (2408107010088)
