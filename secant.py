@@ -34,3 +34,14 @@ def secant_method(function_str, x0, x1, epsilon=0.001, max_iter=100):
         prev_f, curr_f = curr_f, next_f
         iteration += 1
     return pd.DataFrame(results), next_x
+    
+    if __name__ == "__main__":
+        func = input("Masukkan fungsi f(x) (contoh: 'x**3 - 2*x - 5'): ")
+        x0 = float(input("Masukkan x0: "))
+        x1 = float(input("Masukkan x1: "))
+        eps = float(input("Masukkan toleransi epsilon (default 0.001): ") or 0.001)
+        
+        table, root = secant_method(func, x0, x1, eps)
+        print("\nTabel Iterasi:")
+        print(table.to_string(index=False, float_format='%.3f'))
+        print(f"\nAkar aproksimasi: x = {root:.3f}")
