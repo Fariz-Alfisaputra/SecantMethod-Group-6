@@ -19,4 +19,8 @@ body {
     font-size: 1.1em;
 }
 
-.result-hii
+.result-highlight {
+    font-weight: bold;
+    color: #198754;
+    font-size: 1.1em;
+}
