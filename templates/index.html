@@ -12,15 +12,16 @@
         <div class="text-center mb-4">
             <h2>Kalkulator Metode Secant</h2>
             <p class="lead">Mencari akar fungsi dengan visualisasi tabel iterasi.</p>
+            <h3>Oleh Kelompok 6</h3>
         </div>
 
         <div class="row g-4">
             <div class="col-lg-5">
-                <div class="card h-100">
+                <div class="card">
                     <div class="card-header">
                         <h5 class="card-title mb-0">Panel Input</h5>
                     </div>
-                     <div class="card-body">
+                    <div class="card-body">
                         <form method="post">
                             <div class="mb-3">
                                 <label for="function_preset" class="form-label">Pilih Fungsi</label>
@@ -31,7 +32,8 @@
                                     <option value="custom" {% if function_str not in preset_functions.values() %}selected{% endif %}>-- Masukkan Fungsi Lain --</option>
                                 </select>
                             </div>
-                            div class="mb-3" id="custom_function_div" style="display:none;">
+
+                            <div class="mb-3" id="custom_function_div" style="display:none;">
                                 <label for="function_custom" class="form-label">Fungsi Kustom f(x)</label>
                                 <input type="text" class="form-control" id="function_custom" name="function_custom" 
                                        value="{{ function_str if function_str not in preset_functions.values() else '' }}" 
@@ -122,6 +124,18 @@
                     </div>
                 </div>
                 {% endif %}
+
+                {% if plot_url %}
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Grafik Fungsi</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <img src="data:image/png;base64,{{ plot_url }}" class="img-fluid border rounded" alt="Grafik Fungsi">
+                    </div>
+                </div>
+                {% endif %}
+                </div>
             </div>
         </div>
     </div>
