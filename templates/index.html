@@ -20,3 +20,14 @@
                     <div class="card-header">
                         <h5 class="card-title mb-0">Panel Input</h5>
                     </div>
+                     <div class="card-body">
+                        <form method="post">
+                            <div class="mb-3">
+                                <label for="function_preset" class="form-label">Pilih Fungsi</label>
+                                <select class="form-select" id="function_preset" name="function_preset">
+                                    {% for display, value in preset_functions.items() %}
+                                        <option value="{{ value }}" {% if value == function_str %}selected{% endif %}>{{ display }}</option>
+                                    {% endfor %}
+                                    <option value="custom" {% if function_str not in preset_functions.values() %}selected{% endif %}>-- Masukkan Fungsi Lain --</option>
+                                </select>
+                            </div>
