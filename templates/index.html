@@ -126,3 +126,23 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const presetSelect = document.getElementById('function_preset');
+            const customDiv = document.getElementById('custom_function_div');
+            const customInput = document.getElementById('function_custom');
+            function toggleCustomInput() {
+                if (presetSelect.value === 'custom') {
+                    customDiv.style.display = 'block';
+                    customInput.required = true;
+                } else {
+                    customDiv.style.display = 'none';
+                    customInput.required = false;
+                }
+            }
+            toggleCustomInput();
+            presetSelect.addEventListener('change', toggleCustomInput);
+        });
+    </script>
+</body>
+</html>
