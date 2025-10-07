@@ -6,7 +6,7 @@
 - Ahmad Zikri Pasya (2408107010103)
 - T. Farid Haqi (2408107010091)
 - M. Athallah Assyarif (2408107010088)
-- 
+- Sayed Zaki Aqram (2408107010087)
 
 ---
 
