@@ -31,3 +31,50 @@
                                     <option value="custom" {% if function_str not in preset_functions.values() %}selected{% endif %}>-- Masukkan Fungsi Lain --</option>
                                 </select>
                             </div>
+                            div class="mb-3" id="custom_function_div" style="display:none;">
+                                <label for="function_custom" class="form-label">Fungsi Kustom f(x)</label>
+                                <input type="text" class="form-control" id="function_custom" name="function_custom" 
+                                       value="{{ function_str if function_str not in preset_functions.values() else '' }}" 
+                                       placeholder="Contoh: x**3 - 5*x + 1">
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="x0" class="form-label">Tebakan Awal (x₀)</label>
+                                    <input type="number" step="any" class="form-control" id="x0" name="x0" value="{{ x0 }}" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="x1" class="form-label">Tebakan Awal (x₁)</label>
+                                    <input type="number" step="any" class="form-control" id="x1" name="x1" value="{{ x1 }}" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tolerance" class="form-label">Toleransi Error (ε)</label>
+                                <input type="number" step="any" class="form-control" id="tolerance" name="tolerance" value="{{ tol }}" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Hitung Akar</button>
+                            </div>
+                        </form>
+                    </div>
+                     <div class="card-footer info-box">
+                        <strong>Cara Penggunaan:</strong>
+                        <ul>
+                            <li>Gunakan <code>x</code> sebagai variabel dan <code>*</code> untuk perkalian.</li>
+                            <li>Gunakan <code>**</code> untuk pangkat (contoh: <code>x**2</code>).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                {% if message %}
+                    <div class="alert {% if result is not none %}alert-success{% else %}alert-danger{% endif %} mb-4">
+                        <h4 class="alert-heading">{% if result is not none %}Hasil Perhitungan{% else %}Status{% endif %}</h4>
+                        {% if result is not none %}
+                            <p class="mb-1"><strong>Akar yang ditemukan:</strong> <span class="result-highlight">{{ "%.8f"|format(result) }}</span></p>
+                        {% endif %}
+                        <p class="mb-1"><strong>Jumlah Iterasi:</strong> {{ iterations_data|length }}</p>
+                        <p class="mb-0"><strong>Pesan:</strong> {{ message }}</p>
+                    </div>
+                {% endif %}
