@@ -43,3 +43,9 @@ body {
     overflow-x: auto; 
     border-radius: 0 0 .375rem .375rem; 
 }
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
